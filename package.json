@@ -1,0 +1,17 @@
+{
+  "name": "encounterdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server",
+    "sass": "sass --watch bubbleStyle.sass:bubbleStyle.css",
+    "minify": "uglifyjs -c -m --keep-fnames -o bubble.min.js -- bubble.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
