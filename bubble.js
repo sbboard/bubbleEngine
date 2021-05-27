@@ -26,7 +26,7 @@ const bubbles = [
   },
 ];
 
-let bubbleElements = []
+let bubbleElements = [];
 
 function startBubbles() {
   let tank = document.getElementById("bubbleTank");
@@ -34,7 +34,7 @@ function startBubbles() {
   bubbles.map((v) => {
     //create parent link
     let linkElement = document.createElement("a");
-    linkElement.src = v.link;
+    linkElement.href = v.link;
     linkElement.classList.add("bubble");
 
     //create topTin (for overlay effect)
@@ -59,11 +59,32 @@ function startBubbles() {
     bubbleWrap.appendChild(bubText);
 
     linkElement.appendChild(bubbleWrap);
-    bubbleElements.push(linkElement)
+    bubbleElements.push(linkElement);
     tank.appendChild(linkElement);
   });
-
-  bubbleElements[0].style.left = "200px"
+  calculatePlaces()
 }
 
 startBubbles();
+
+function calculatePlaces(){
+  const rowSize = 3;
+  let bubbleSize = bubbleElements[0].offsetWidth;
+  let innerBubblesize = bubbleElements[0].children[1].offsetWidth;
+  let edgeSize = (bubbleSize - innerBubblesize) / 2;
+  console.log(bubbleSize, innerBubblesize, edgeSize);
+  bubbleElements.map((e, i) => {
+    let rowNum = Math.floor(i / rowSize) + 1;
+    e.style.top = `${(bubbleSize / 2) * (rowNum - 1)}px`;
+    if (rowNum % 2 != 0) {
+      e.style.left = `${(bubbleSize + innerBubblesize - edgeSize * 2) * i}px`;
+    } else {
+      e.style.left = `${
+        innerBubblesize +
+        (bubbleSize + (innerBubblesize - edgeSize * 2)) * (i - rowSize)
+      }px`;
+    }
+  });
+}
+
+window.addEventListener("resize", calculatePlaces);
