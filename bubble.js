@@ -1,27 +1,27 @@
 const bubbles = [
   {
-    name: "hairy dog 0",
-    text: "there was once a big ol hairy dog",
+    name: "Link 1",
+    text: "Filler filler hello filler",
     link: "#",
   },
   {
-    name: "hairy dog 1",
-    text: "there was once a big ol hairy dog",
+    name: "Link 2",
+    text: "Filler filler hello filler",
     link: "#",
   },
   {
-    name: "hairy dog 2",
-    text: "there was once a big ol hairy dog",
+    name: "Link 3",
+    text: "Filler filler hello filler",
     link: "#",
   },
   {
-    name: "hairy dog 3",
-    text: "there was once a big ol hairy dog",
+    name: "Link 4",
+    text: "Filler filler hello filler",
     link: "#",
   },
   {
-    name: "hairy dog 4",
-    text: "there was once a big ol hairy dog",
+    name: "Link 5",
+    text: "Filler filler hello filler",
     link: "#",
   },
 ];
@@ -128,7 +128,7 @@ function bubbleScrollMove(e) {
 }
 
 let scrollTimer
-const timerTime = 500
+const timerTime = 100
 
 window.addEventListener("resize", calculatePlaces);
 window.addEventListener(

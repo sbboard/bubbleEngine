@@ -32,7 +32,7 @@ html {
   font-size: 2vw;
   -webkit-font-smoothing: antialiased;
   font-family: "Roboto", sans-serif;
-  transition: padding 1s ease-in-out;
+  transition: padding 0.5s ease-in-out;
 }
 #tankWrap.scrollGuys #bubbleTank a.bubble, #tankWrap.scrollDown #bubbleTank a.bubble, #tankWrap.scrollUp #bubbleTank a.bubble {
   transform: scale(0.9);
