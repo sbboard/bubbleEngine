@@ -1,37 +1,53 @@
+@keyframes breath {
+  0% {
+    width: 22.2245%;
+    padding-bottom: 22.2245%;
+    margin: 5.556125%;
+  }
+  100% {
+    width: 22.7245%;
+    padding-bottom: 22.7245%;
+    margin: 5.306125%;
+  }
+}
 #tankWrap {
-  background-color: green;
   padding: 2em 0;
+  font-size: 2vw;
 }
 #tankWrap #bubbleTank {
-  background-color: red;
   width: 100%;
   position: relative;
   height: 0;
-  padding-bottom: 20%;
+  padding-bottom: 44.449%;
 }
 #tankWrap #bubbleTank a.bubble {
   color: white;
   text-decoration: none;
   position: absolute;
-  width: 10%;
-  padding-bottom: 10%;
-  transition: 0.3s width, 0.3s padding-bottom, 0.3s margin;
-  margin: 2.5%;
+  width: 22.2245%;
+  padding-bottom: 22.2245%;
+  animation: breath 0.75s alternate infinite ease-in-out;
+  transition: 0.3s width, 0.3s padding-bottom, 0.3s margin, 0.3s transform;
+  margin: 5.556125%;
   height: 0;
   border-radius: 100%;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 130, 123, 0.5);
   font-family: "Roboto", sans-serif;
+  mix-blend-mode: hard-light;
+  transform: scale(1);
+}
+#tankWrap #bubbleTank a.bubble.notHovered {
+  transform: scale(0.65);
 }
 #tankWrap #bubbleTank a.bubble:hover {
-  width: 15%;
-  padding-bottom: 15%;
-  margin: 0;
+  transform: scale(1.25);
+  animation: none;
 }
 #tankWrap #bubbleTank a.bubble:hover .bubInnerWrap {
   width: 90%;
-  margin: 5%;
   height: 90%;
+  margin: 5%;
 }
 #tankWrap #bubbleTank a.bubble:hover .bubInnerWrap .bubTitle {
   opacity: 0;
@@ -46,11 +62,11 @@
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  mix-blend-mode: hard-light;
+  mix-blend-mode: screen;
   background-color: #00827B;
 }
 #tankWrap #bubbleTank a.bubble .bubInnerWrap {
-  background-color: #00827B;
+  background-color: #007872;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,6 +87,8 @@
 #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubText {
   opacity: 0;
   padding: 2em;
+  width: 8em;
+  text-align: center;
 }
 
 /*# sourceMappingURL=bubbleStyle.css.map */

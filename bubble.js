@@ -31,11 +31,28 @@ let bubbleElements = [];
 function startBubbles() {
   let tank = document.getElementById("bubbleTank");
   //create bubbles
-  bubbles.map((v) => {
+  bubbles.map((v,i) => {
     //create parent link
     let linkElement = document.createElement("a");
     linkElement.href = v.link;
     linkElement.classList.add("bubble");
+    linkElement.dataset.bubNum = i
+    linkElement.onmouseover = () => {
+      bubbleElements.map((nv,ni) => {
+        if(i != ni){
+          console.log(nv)
+          nv.classList.add("notHovered")
+        }
+      })
+    }
+    linkElement.onmouseout = () => {
+      bubbleElements.map((nv,ni) => {
+        if(i != ni){
+          console.log(nv)
+          nv.classList.remove("notHovered")
+        }
+      })
+    }
 
     //create topTin (for overlay effect)
     let topTin = document.createElement("span");
