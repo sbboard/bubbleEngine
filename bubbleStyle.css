@@ -10,15 +10,44 @@
     margin: 5.306125%;
   }
 }
+@keyframes scrollUp {
+  0% {
+    padding: 2em 0 2em 0;
+  }
+  50% {
+    padding: 3em 0 1em 0;
+  }
+  100% {
+    padding: 2em 0 2em 0;
+  }
+}
+html {
+  background-color: #00827B;
+}
+
 #tankWrap {
+  background-color: #00827B;
+  margin: 30em 0;
   padding: 2em 0;
   font-size: 2vw;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", sans-serif;
+  transition: padding 1s ease-in-out;
+}
+#tankWrap.scrollGuys #bubbleTank a.bubble, #tankWrap.scrollDown #bubbleTank a.bubble, #tankWrap.scrollUp #bubbleTank a.bubble {
+  transform: scale(0.9);
+}
+#tankWrap.scrollUp {
+  padding: 3em 0 1em 0;
+}
+#tankWrap.scrollDown {
+  padding: 1em 0 3em 0;
 }
 #tankWrap #bubbleTank {
   width: 100%;
   position: relative;
   height: 0;
-  padding-bottom: 44.449%;
+  padding-bottom: 45%;
 }
 #tankWrap #bubbleTank a.bubble {
   color: white;
@@ -27,21 +56,23 @@
   width: 22.2245%;
   padding-bottom: 22.2245%;
   animation: breath 0.75s alternate infinite ease-in-out;
-  transition: 0.3s width, 0.3s padding-bottom, 0.3s margin, 0.3s transform;
+  transition: 0.3s transform;
   margin: 5.556125%;
   height: 0;
   border-radius: 100%;
   align-items: center;
   background-color: rgba(0, 130, 123, 0.5);
-  font-family: "Roboto", sans-serif;
   mix-blend-mode: hard-light;
   transform: scale(1);
 }
-#tankWrap #bubbleTank a.bubble.notHovered {
+#tankWrap #bubbleTank a.bubble.notHoveredClose {
   transform: scale(0.65);
 }
+#tankWrap #bubbleTank a.bubble.notHoveredFar {
+  transform: scale(0.3);
+}
 #tankWrap #bubbleTank a.bubble:hover {
-  transform: scale(1.25);
+  transform: scale(1.27);
   animation: none;
 }
 #tankWrap #bubbleTank a.bubble:hover .bubInnerWrap {
@@ -79,10 +110,12 @@
 }
 #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubContents, #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubText, #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubTitle {
   position: absolute;
-  transition: 0.3s opacity;
+  transition: 0.3s opacity ease-in-out;
 }
 #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubTitle {
   opacity: 1;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubText {
   opacity: 0;

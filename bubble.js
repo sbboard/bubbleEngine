@@ -1,5 +1,10 @@
 const bubbles = [
   {
+    name: "hairy dog 0",
+    text: "there was once a big ol hairy dog",
+    link: "#",
+  },
+  {
     name: "hairy dog 1",
     text: "there was once a big ol hairy dog",
     link: "#",
@@ -19,40 +24,55 @@ const bubbles = [
     text: "there was once a big ol hairy dog",
     link: "#",
   },
-  {
-    name: "hairy dog 5",
-    text: "there was once a big ol hairy dog",
-    link: "#",
-  },
 ];
+const rowSize = 3;
+let lastScrollTop = 0;
 
 let bubbleElements = [];
 
 function startBubbles() {
   let tank = document.getElementById("bubbleTank");
   //create bubbles
-  bubbles.map((v,i) => {
+  bubbles.map((v, i) => {
     //create parent link
     let linkElement = document.createElement("a");
     linkElement.href = v.link;
     linkElement.classList.add("bubble");
-    linkElement.dataset.bubNum = i
+    // linkElement.dataset.bubNum = i
     linkElement.onmouseover = () => {
-      bubbleElements.map((nv,ni) => {
-        if(i != ni){
-          console.log(nv)
-          nv.classList.add("notHovered")
+      bubbleElements.map((nv, ni) => {
+        if (i != ni) {
+          //top row
+          if (i < rowSize) {
+            if (
+              ni == i + rowSize ||
+              (ni >= rowSize && ni == i + (rowSize - 1))
+            ) {
+              nv.classList.add("notHoveredClose");
+            } else {
+              nv.classList.add("notHoveredFar");
+            }
+          } else {
+            if (
+              ni == i - rowSize ||
+              (ni < rowSize && ni == i - (rowSize - 1))
+            ) {
+              nv.classList.add("notHoveredClose");
+            } else {
+              nv.classList.add("notHoveredFar");
+            }
+          }
         }
-      })
-    }
+      });
+    };
     linkElement.onmouseout = () => {
-      bubbleElements.map((nv,ni) => {
-        if(i != ni){
-          console.log(nv)
-          nv.classList.remove("notHovered")
+      bubbleElements.map((nv, ni) => {
+        if (i != ni) {
+          nv.classList.remove("notHoveredClose");
+          nv.classList.remove("notHoveredFar");
         }
-      })
-    }
+      });
+    };
 
     //create topTin (for overlay effect)
     let topTin = document.createElement("span");
@@ -79,17 +99,15 @@ function startBubbles() {
     bubbleElements.push(linkElement);
     tank.appendChild(linkElement);
   });
-  calculatePlaces()
+  calculatePlaces();
 }
 
 startBubbles();
 
-function calculatePlaces(){
-  const rowSize = 3;
+function calculatePlaces() {
   let bubbleSize = bubbleElements[0].offsetWidth;
   let innerBubblesize = bubbleElements[0].children[1].offsetWidth;
   let edgeSize = (bubbleSize - innerBubblesize) / 2;
-  console.log(bubbleSize, innerBubblesize, edgeSize);
   bubbleElements.map((e, i) => {
     let rowNum = Math.floor(i / rowSize) + 1;
     e.style.top = `${(bubbleSize / 2) * (rowNum - 1)}px`;
@@ -104,4 +122,36 @@ function calculatePlaces(){
   });
 }
 
+function bubbleScrollMove(e) {
+  console.log(e);
+  console.log(window.scrollTop);
+}
+
+let scrollTimer
+const timerTime = 500
+
 window.addEventListener("resize", calculatePlaces);
+window.addEventListener(
+  "scroll",
+  function () {
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > lastScrollTop) {
+      clearTimeout(scrollTimer)
+      document.getElementById("tankWrap").classList.remove("scrollUp")
+      document.getElementById("tankWrap").classList.add("scrollDown")
+      scrollTimer = this.setTimeout(removeScrollClass, timerTime)
+    } else {
+      clearTimeout(scrollTimer)
+      document.getElementById("tankWrap").classList.remove("scrollDown")
+      document.getElementById("tankWrap").classList.add("scrollUp")
+      scrollTimer = this.setTimeout(removeScrollClass, timerTime)
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  },
+  false
+);
+
+function removeScrollClass(){
+  document.getElementById("tankWrap").classList.remove("scrollUp")
+  document.getElementById("tankWrap").classList.remove("scrollDown")
+}

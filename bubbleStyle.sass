@@ -16,15 +16,38 @@ $expandedInnerBubble: 90%
         width: $bubbleSize + .5
         padding-bottom: $bubbleSize + .5
         margin: ($expandedBubbleSize - $bubbleSize - .5) / 2
-
-#tankWrap    
+@keyframes scrollUp
+    0%
+        padding: 2em 0 2em 0
+    50%
+        padding: 3em 0 1em 0
+    100%
+        padding: 2em 0 2em 0
+html
+    background-color: $generisColor
+#tankWrap
+    background-color: $generisColor
+    margin: 30em 0
     padding: 2em 0
     font-size: 2vw
+    -webkit-font-smoothing: antialiased
+    font-family: 'Roboto', sans-serif
+    transition: padding 1s ease-in-out
+    &.scrollGuys
+        #bubbleTank
+            a.bubble
+                transform: scale(.9)
+    &.scrollUp
+        @extend .scrollGuys
+        padding: 3em 0 1em 0
+    &.scrollDown
+        @extend .scrollGuys
+        padding: 1em 0 3em 0
     #bubbleTank
         width: 100%
         position: relative
         height: 0
-        padding-bottom: ($expandedBubbleSize * 1.5) - ($bubbleSize / 2) + (($expandedBubbleSize - $bubbleSize) / 2)
+        padding-bottom: 45%
         a.bubble
             color: white
             text-decoration: none
@@ -32,19 +55,20 @@ $expandedInnerBubble: 90%
             width: $bubbleSize
             padding-bottom: $bubbleSize
             animation: breath .75s alternate infinite ease-in-out
-            transition: $animationSpeed width, $animationSpeed padding-bottom, $animationSpeed margin, $animationSpeed transform
+            transition: $animationSpeed transform
             margin: ($expandedBubbleSize - $bubbleSize) / 2
             height: 0
             border-radius: 100%
             align-items: center
             background-color: rgba($generisColor, .5)
-            font-family: 'Roboto', sans-serif
             mix-blend-mode: hard-light
             transform: scale(1)
-            &.notHovered
+            &.notHoveredClose
                 transform: scale(.65)
+            &.notHoveredFar
+                transform: scale(.3)
             &:hover
-                transform: scale(1.25)
+                transform: scale(1.27)
                 animation: none
                 .bubInnerWrap
                     width: $expandedInnerBubble
@@ -76,10 +100,12 @@ $expandedInnerBubble: 90%
                 transition: $animationSpeed width, $animationSpeed height, $animationSpeed margin
                 .bubContents
                     position: absolute
-                    transition: $animationSpeed opacity
+                    transition: $animationSpeed opacity ease-in-out
                 .bubTitle
                     @extend .bubContents
                     opacity: 1
+                    font-weight: 600
+                    text-transform: capitalize
                 .bubText
                     @extend .bubContents
                     opacity: 0
