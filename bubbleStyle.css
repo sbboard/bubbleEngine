@@ -13,11 +13,11 @@
 #tankWrap {
   background-color: #00827B;
   padding: 2em 0;
-  font-size: 2vw;
+  font-size: 2vmin;
   -webkit-font-smoothing: antialiased;
   font-family: "Roboto", sans-serif;
   transition: padding 0.25s ease-out;
-  margin: 50vw auto;
+  margin: 50vh auto;
   max-width: 1000px;
 }
 #tankWrap.scrollGuys #bubbleTank a.bubble, #tankWrap.scrollDown #bubbleTank a.bubble, #tankWrap.scrollUp #bubbleTank a.bubble {
