@@ -16,15 +16,8 @@ $expandedInnerBubble: 90%
         width: $bubbleSize + .5
         padding-bottom: $bubbleSize + .5
         margin: ($expandedBubbleSize - $bubbleSize - .5) / 2
-@keyframes scrollUp
-    0%
-        padding: 2em 0 2em 0
-    50%
-        padding: 3em 0 1em 0
-    100%
-        padding: 2em 0 2em 0
 html
-    background-color: $generisColor
+    white
 #tankWrap
     background-color: $generisColor
     margin: 30em 0
@@ -32,17 +25,18 @@ html
     font-size: 2vw
     -webkit-font-smoothing: antialiased
     font-family: 'Roboto', sans-serif
-    transition: padding .5s ease-in-out
+    transition: padding .25s ease-out
     &.scrollGuys
         #bubbleTank
             a.bubble
-                transform: scale(.9)
+                transition: ($animationSpeed /3) transform ease-in-out
+                transform: scale(1) scaleY(1.1) scaleX(.9)
     &.scrollUp
         @extend .scrollGuys
-        padding: 3em 0 1em 0
+        padding: 4em 0 0em 0
     &.scrollDown
         @extend .scrollGuys
-        padding: 1em 0 3em 0
+        padding: 0em 0 4em 0
     #bubbleTank
         width: 100%
         position: relative
@@ -64,11 +58,13 @@ html
             mix-blend-mode: hard-light
             transform: scale(1)
             &.notHoveredClose
-                transform: scale(.65)
+                transform: scale(.75)
+                animation: none
             &.notHoveredFar
-                transform: scale(.3)
+                transform: scale(.5)
+                animation: none
             &:hover
-                transform: scale(1.27)
+                transform: scale(1.15)
                 animation: none
                 .bubInnerWrap
                     width: $expandedInnerBubble

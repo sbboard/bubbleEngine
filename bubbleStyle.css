@@ -10,21 +10,6 @@
     margin: 5.306125%;
   }
 }
-@keyframes scrollUp {
-  0% {
-    padding: 2em 0 2em 0;
-  }
-  50% {
-    padding: 3em 0 1em 0;
-  }
-  100% {
-    padding: 2em 0 2em 0;
-  }
-}
-html {
-  background-color: #00827B;
-}
-
 #tankWrap {
   background-color: #00827B;
   margin: 30em 0;
@@ -32,16 +17,17 @@ html {
   font-size: 2vw;
   -webkit-font-smoothing: antialiased;
   font-family: "Roboto", sans-serif;
-  transition: padding 0.5s ease-in-out;
+  transition: padding 0.25s ease-out;
 }
 #tankWrap.scrollGuys #bubbleTank a.bubble, #tankWrap.scrollDown #bubbleTank a.bubble, #tankWrap.scrollUp #bubbleTank a.bubble {
-  transform: scale(0.9);
+  transition: 0.1s transform ease-in-out;
+  transform: scale(1) scaleY(1.1) scaleX(0.9);
 }
 #tankWrap.scrollUp {
-  padding: 3em 0 1em 0;
+  padding: 4em 0 0em 0;
 }
 #tankWrap.scrollDown {
-  padding: 1em 0 3em 0;
+  padding: 0em 0 4em 0;
 }
 #tankWrap #bubbleTank {
   width: 100%;
@@ -66,13 +52,15 @@ html {
   transform: scale(1);
 }
 #tankWrap #bubbleTank a.bubble.notHoveredClose {
-  transform: scale(0.65);
+  transform: scale(0.75);
+  animation: none;
 }
 #tankWrap #bubbleTank a.bubble.notHoveredFar {
-  transform: scale(0.3);
+  transform: scale(0.5);
+  animation: none;
 }
 #tankWrap #bubbleTank a.bubble:hover {
-  transform: scale(1.27);
+  transform: scale(1.15);
   animation: none;
 }
 #tankWrap #bubbleTank a.bubble:hover .bubInnerWrap {
