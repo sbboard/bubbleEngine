@@ -21,7 +21,7 @@
   max-width: 1000px;
 }
 #tankWrap.scrollGuys #bubbleTank a.bubble, #tankWrap.scrollDown #bubbleTank a.bubble, #tankWrap.scrollUp #bubbleTank a.bubble {
-  transition: 0.1s transform ease-in-out;
+  transition: 0.3s transform ease-in-out;
   transform: scale(1) scaleY(1.1) scaleX(0.9);
 }
 #tankWrap.scrollUp {
