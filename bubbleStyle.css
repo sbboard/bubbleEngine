@@ -20,6 +20,12 @@
   margin: 50vh auto;
   max-width: 1000px;
 }
+#tankWrap #noscript {
+  color: white;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
 #tankWrap.scrollGuys #bubbleTank a.bubble, #tankWrap.scrollDown #bubbleTank a.bubble, #tankWrap.scrollUp #bubbleTank a.bubble {
   transition: 0.3s transform ease-in-out;
   transform: scale(1) scaleY(1.1) scaleX(0.9);

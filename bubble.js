@@ -38,7 +38,13 @@ function startBubbles() {
     let linkElement = document.createElement("a");
     linkElement.href = v.link;
     linkElement.classList.add("bubble");
-    // linkElement.dataset.bubNum = i
+
+    linkElement.onclick = (e) => {
+      //forces second click on mobile
+      if (linkElement.classList.contains("hovered") == false) {
+        e.preventDefault();
+      }
+    };
     linkElement.onmouseover = () => {
       bubbleElements.map((nv, ni) => {
         if (i != ni) {
@@ -62,6 +68,11 @@ function startBubbles() {
               nv.classList.add("notHoveredFar");
             }
           }
+        } else {
+          //timeout is so mobile can click and still not be "hovered"
+          setTimeout(function () {
+            nv.classList.add("hovered");
+          }, 1);
         }
       });
     };
@@ -70,6 +81,8 @@ function startBubbles() {
         if (i != ni) {
           nv.classList.remove("notHoveredClose");
           nv.classList.remove("notHoveredFar");
+        } else {
+          nv.classList.remove("hovered");
         }
       });
     };
@@ -127,8 +140,8 @@ function bubbleScrollMove(e) {
   console.log(window.scrollTop);
 }
 
-let scrollTimer
-const timerTime = 100
+let scrollTimer;
+const timerTime = 100;
 
 window.addEventListener("resize", calculatePlaces);
 window.addEventListener(
@@ -136,22 +149,22 @@ window.addEventListener(
   function () {
     var st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop) {
-      clearTimeout(scrollTimer)
-      document.getElementById("tankWrap").classList.remove("scrollUp")
-      document.getElementById("tankWrap").classList.add("scrollDown")
-      scrollTimer = this.setTimeout(removeScrollClass, timerTime)
+      clearTimeout(scrollTimer);
+      document.getElementById("tankWrap").classList.remove("scrollUp");
+      document.getElementById("tankWrap").classList.add("scrollDown");
+      scrollTimer = this.setTimeout(removeScrollClass, timerTime);
     } else {
-      clearTimeout(scrollTimer)
-      document.getElementById("tankWrap").classList.remove("scrollDown")
-      document.getElementById("tankWrap").classList.add("scrollUp")
-      scrollTimer = this.setTimeout(removeScrollClass, timerTime)
+      clearTimeout(scrollTimer);
+      document.getElementById("tankWrap").classList.remove("scrollDown");
+      document.getElementById("tankWrap").classList.add("scrollUp");
+      scrollTimer = this.setTimeout(removeScrollClass, timerTime);
     }
     lastScrollTop = st <= 0 ? 0 : st;
   },
   false
 );
 
-function removeScrollClass(){
-  document.getElementById("tankWrap").classList.remove("scrollUp")
-  document.getElementById("tankWrap").classList.remove("scrollDown")
+function removeScrollClass() {
+  document.getElementById("tankWrap").classList.remove("scrollUp");
+  document.getElementById("tankWrap").classList.remove("scrollDown");
 }
