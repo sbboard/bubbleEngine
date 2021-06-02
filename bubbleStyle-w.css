@@ -1,0 +1,133 @@
+@keyframes breath {
+  0% {
+    width: 22.2245%;
+    padding-bottom: 22.2245%;
+    margin: 5.556125%;
+  }
+  100% {
+    width: 22.7245%;
+    padding-bottom: 22.7245%;
+    margin: 5.306125%;
+  }
+}
+html {
+  background-color: white;
+}
+
+#tankWrap {
+  padding: 2em 0;
+  font-size: 2vmin;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", sans-serif;
+  transition: padding 0.25s ease-out;
+}
+#tankWrap #noscript {
+  color: white;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+#tankWrap.scrollGuys #bubbleTank a.bubble, #tankWrap.scrollDown #bubbleTank a.bubble, #tankWrap.scrollUp #bubbleTank a.bubble {
+  transition: 0.3s transform ease-in-out;
+  transform: scale(1) scaleY(1.1) scaleX(0.9);
+}
+#tankWrap.scrollUp {
+  padding: 4em 0 0em 0;
+}
+#tankWrap.scrollDown {
+  padding: 0em 0 4em 0;
+}
+#tankWrap #bubbleTank {
+  width: 100%;
+  position: relative;
+  height: 0;
+  padding-bottom: 45%;
+}
+#tankWrap #bubbleTank a.bubble {
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  width: 22.2245%;
+  padding-bottom: 22.2245%;
+  animation: breath 0.75s alternate infinite ease-in-out;
+  transition: 0.3s transform;
+  margin: 5.556125%;
+  height: 0;
+  border-radius: 100%;
+  align-items: center;
+  transform: scale(1);
+}
+#tankWrap #bubbleTank a.bubble.notHoveredClose {
+  transform: scale(0.75);
+  animation: none;
+}
+#tankWrap #bubbleTank a.bubble.notHoveredFar {
+  transform: scale(0.5);
+  animation: none;
+}
+#tankWrap #bubbleTank a.bubble:hover {
+  transform: scale(1.15);
+  animation: none;
+}
+#tankWrap #bubbleTank a.bubble:hover .bubInnerWrap {
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+}
+#tankWrap #bubbleTank a.bubble:hover .bubInnerWrap .bubTitle {
+  opacity: 0;
+}
+#tankWrap #bubbleTank a.bubble:hover .bubInnerWrap .bubText {
+  opacity: 1;
+}
+#tankWrap #bubbleTank a.bubble .topTin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+#tankWrap #bubbleTank a.bubble .bubInnerWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12.5%;
+  width: 75%;
+  height: 75%;
+  position: absolute;
+  border-radius: 100%;
+  transition: 0.3s width, 0.3s height, 0.3s margin;
+}
+#tankWrap #bubbleTank a.bubble .bubInnerWrap .bubContents, #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubText, #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubTitle {
+  position: absolute;
+  transition: 0.3s opacity ease-in-out;
+}
+#tankWrap #bubbleTank a.bubble .bubInnerWrap .bubTitle {
+  opacity: 1;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+#tankWrap #bubbleTank a.bubble .bubInnerWrap .bubText {
+  opacity: 0;
+  padding: 2em;
+  width: 8em;
+  text-align: center;
+}
+
+#tankWrap {
+  background-color: white;
+}
+#tankWrap #bubbleTank a.bubble {
+  background-color: #009c93;
+  mix-blend-mode: normal;
+}
+#tankWrap #bubbleTank a.bubble .topTin {
+  mix-blend-mode: normal;
+  background-color: none;
+}
+#tankWrap #bubbleTank a.bubble .bubInnerWrap {
+  background-color: #007872;
+}
+
+/*# sourceMappingURL=bubbleStyle-w.css.map */

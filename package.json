@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "lite-server",
-    "sass": "sass --watch bubbleStyle.sass:bubbleStyle.css",
+    "sass": "sass --watch bubbleStyle-w.sass:bubbleStyle-w.css",
     "minify": "uglifyjs -c -m --keep-fnames -o bubble.min.js -- bubble.js"
   },
   "author": "",

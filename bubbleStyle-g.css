@@ -10,15 +10,16 @@
     margin: 5.306125%;
   }
 }
+html {
+  background-color: white;
+}
+
 #tankWrap {
-  background-color: #00827B;
   padding: 2em 0;
   font-size: 2vmin;
   -webkit-font-smoothing: antialiased;
   font-family: "Roboto", sans-serif;
   transition: padding 0.25s ease-out;
-  margin: 50vh auto;
-  max-width: 1000px;
 }
 #tankWrap #noscript {
   color: white;
@@ -54,8 +55,6 @@
   height: 0;
   border-radius: 100%;
   align-items: center;
-  background-color: rgba(0, 130, 123, 0.5);
-  mix-blend-mode: hard-light;
   transform: scale(1);
 }
 #tankWrap #bubbleTank a.bubble.notHoveredClose {
@@ -88,11 +87,8 @@
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  mix-blend-mode: screen;
-  background-color: #00827B;
 }
 #tankWrap #bubbleTank a.bubble .bubInnerWrap {
-  background-color: #007872;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,4 +115,19 @@
   text-align: center;
 }
 
-/*# sourceMappingURL=bubbleStyle.css.map */
+#tankWrap {
+  background-color: #00827B;
+}
+#tankWrap #bubbleTank a.bubble {
+  background-color: rgba(0, 130, 123, 0.5);
+  mix-blend-mode: hard-light;
+}
+#tankWrap #bubbleTank a.bubble .topTin {
+  mix-blend-mode: screen;
+  background-color: #00827B;
+}
+#tankWrap #bubbleTank a.bubble .bubInnerWrap {
+  background-color: #007872;
+}
+
+/*# sourceMappingURL=bubbleStyle-g.css.map */
