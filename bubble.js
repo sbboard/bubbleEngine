@@ -1,27 +1,32 @@
 const bubbles = [
   {
-    name: "Link 1",
-    text: "Filler filler hello filler",
+    name: "Capital Campaign",
+    text: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+    link: "https://generis.com/capital-campaign/",
+  },
+  {
+    name: "One Fund",
+    text: "Lorem Ipsum Lorem Ipsum",
+    link: "https://generis.com/one-fund/",
+  },
+  {
+    name: "Generosity Coaching",
+    text: "Lorem Ipsum Lorem Ipsum",
     link: "#",
   },
   {
-    name: "Link 2",
-    text: "Filler filler hello filler",
-    link: "#",
+    name: "Giving Development",
+    text: "Giving Development",
+    link: "https://generis.com/giving-development/",
   },
   {
-    name: "Link 3",
-    text: "Filler filler hello filler",
-    link: "#",
+    name: "Generosity Audit",
+    text: "Generosity Audit",
+    link: "https://generis.com/generosity-audit/",
   },
   {
-    name: "Link 4",
-    text: "Filler filler hello filler",
-    link: "#",
-  },
-  {
-    name: "Link 5",
-    text: "Filler filler hello filler",
+    name: "Effective Ministry",
+    text: "Lorem Ipsum Lorem Ipsum",
     link: "#",
   },
 ];

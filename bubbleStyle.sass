@@ -33,13 +33,13 @@ html
         #bubbleTank
             a.bubble
                 transition: $animationSpeed transform ease-in-out
-                transform: scale(1) scaleY(1.1) scaleX(.9)
+                transform: scale(1) scaleY(1.05) scaleX(.95)
     &.scrollUp
         @extend .scrollGuys
-        padding: 4em 0 0em 0
+        padding: 3em 0 1em 0
     &.scrollDown
         @extend .scrollGuys
-        padding: 0em 0 4em 0
+        padding: 1em 0 3em 0
     #bubbleTank
         width: 100%
         position: relative
@@ -95,14 +95,28 @@ html
                 .bubContents
                     position: absolute
                     transition: $animationSpeed opacity ease-in-out
+                    line-height: 1.25
                 .bubTitle
                     @extend .bubContents
                     opacity: 1
+                    text-align: center
+                    width: 8em
                     font-weight: 600
                     text-transform: capitalize
                 .bubText
                     @extend .bubContents
                     opacity: 0
                     padding: 2em
-                    width: 8em
+                    width: 12em
                     text-align: center
+#tankWrap
+    background-color: white
+    #bubbleTank
+        a.bubble
+            background-color: lighten($generisColor, 5)
+            mix-blend-mode: normal
+            .topTin
+                mix-blend-mode: normal
+                background-color: none
+            .bubInnerWrap
+                background-color: $generisDark

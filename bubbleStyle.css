@@ -29,13 +29,13 @@ html {
 }
 #tankWrap.scrollGuys #bubbleTank a.bubble, #tankWrap.scrollDown #bubbleTank a.bubble, #tankWrap.scrollUp #bubbleTank a.bubble {
   transition: 0.3s transform ease-in-out;
-  transform: scale(1) scaleY(1.1) scaleX(0.9);
+  transform: scale(1) scaleY(1.05) scaleX(0.95);
 }
 #tankWrap.scrollUp {
-  padding: 4em 0 0em 0;
+  padding: 3em 0 1em 0;
 }
 #tankWrap.scrollDown {
-  padding: 0em 0 4em 0;
+  padding: 1em 0 3em 0;
 }
 #tankWrap #bubbleTank {
   width: 100%;
@@ -102,16 +102,19 @@ html {
 #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubContents, #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubText, #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubTitle {
   position: absolute;
   transition: 0.3s opacity ease-in-out;
+  line-height: 1.25;
 }
 #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubTitle {
   opacity: 1;
+  text-align: center;
+  width: 8em;
   font-weight: 600;
   text-transform: capitalize;
 }
 #tankWrap #bubbleTank a.bubble .bubInnerWrap .bubText {
   opacity: 0;
   padding: 2em;
-  width: 8em;
+  width: 12em;
   text-align: center;
 }
 
@@ -130,4 +133,4 @@ html {
   background-color: #007872;
 }
 
-/*# sourceMappingURL=bubbleStyle-w.css.map */
+/*# sourceMappingURL=bubbleStyle.css.map */
