@@ -1,3 +1,6 @@
+//max character limit for name: 
+//max character limit for text: 
+
 const bubbles = [
   {
     name: "Capital Campaign",
@@ -11,7 +14,7 @@ const bubbles = [
   },
   {
     name: "Generosity Coaching",
-    text: "Lorem Ipsum Lorem Ipsum",
+    text: "onelongwordjusttoseewhatitlookslike",
     link: "#",
   },
   {

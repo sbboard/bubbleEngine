@@ -1,7 +1,7 @@
 $generisColor: #00827B
 $generisDark: #007872
 $animationSpeed: .3s
-$bubbleSize: 22.2245%
+$bubbleSize: 18.95%
 $expandedBubbleSize: $bubbleSize * 1.5
 //these variables relative to parent bubble
 $innerBubble: 75%
@@ -16,11 +16,9 @@ $expandedInnerBubble: 90%
         width: $bubbleSize + .5
         padding-bottom: $bubbleSize + .5
         margin: ($expandedBubbleSize - $bubbleSize - .5) / 2
-html
-    background-color: white
 #tankWrap
     padding: 2em 0
-    font-size: 2vmin
+    font-size: min(2vw, 24px)
     -webkit-font-smoothing: antialiased
     font-family: 'Roboto', sans-serif
     transition: padding .25s ease-out
@@ -44,7 +42,7 @@ html
         width: 100%
         position: relative
         height: 0
-        padding-bottom: 45%
+        padding-bottom: $bubbleSize * 2
         a.bubble
             color: white
             text-decoration: none
@@ -100,17 +98,16 @@ html
                     @extend .bubContents
                     opacity: 1
                     text-align: center
-                    width: 8em
-                    font-weight: 600
+                    width: 7em
+                    font-weight: 500
                     text-transform: capitalize
                 .bubText
                     @extend .bubContents
                     opacity: 0
                     padding: 2em
-                    width: 12em
+                    width: 11em
                     text-align: center
 #tankWrap
-    background-color: white
     #bubbleTank
         a.bubble
             background-color: lighten($generisColor, 5)
