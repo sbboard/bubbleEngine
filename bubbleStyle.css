@@ -1,3 +1,15 @@
+@-webkit-keyframes breath {
+  0% {
+    width: 18.95%;
+    padding-bottom: 18.95%;
+    margin: 4.7375%;
+  }
+  100% {
+    width: 19.45%;
+    padding-bottom: 19.45%;
+    margin: 4.4875%;
+  }
+}
 @keyframes breath {
   0% {
     width: 18.95%;
@@ -12,10 +24,11 @@
 }
 #tankWrap {
   padding: 2em 0;
-  font-size: min(2vw, 24px);
+  font-size: min(2vw, 21px);
   -webkit-font-smoothing: antialiased;
   font-family: "Roboto", sans-serif;
   transition: padding 0.25s ease-out;
+  max-width: 1120px;
 }
 #tankWrap #noscript {
   color: white;
@@ -45,7 +58,8 @@
   position: absolute;
   width: 18.95%;
   padding-bottom: 18.95%;
-  animation: breath 0.75s alternate infinite ease-in-out;
+  -webkit-animation: breath 0.75s alternate infinite ease-in-out;
+          animation: breath 0.75s alternate infinite ease-in-out;
   transition: 0.3s transform;
   margin: 4.7375%;
   height: 0;
@@ -55,15 +69,18 @@
 }
 #tankWrap #bubbleTank a.bubble.notHoveredClose {
   transform: scale(0.75);
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
 }
 #tankWrap #bubbleTank a.bubble.notHoveredFar {
   transform: scale(0.5);
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
 }
 #tankWrap #bubbleTank a.bubble:hover {
   transform: scale(1.15);
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
 }
 #tankWrap #bubbleTank a.bubble:hover .bubInnerWrap {
   width: 90%;
@@ -125,5 +142,3 @@
 #tankWrap #bubbleTank a.bubble .bubInnerWrap {
   background-color: #007872;
 }
-
-/*# sourceMappingURL=bubbleStyle.css.map */

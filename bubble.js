@@ -14,7 +14,7 @@ const bubbles = [
   },
   {
     name: "Generosity Coaching",
-    text: "onelongwordjusttoseewhatitlookslike",
+    text: "lorem ipsum mirror ball",
     link: "#",
   },
   {
@@ -24,7 +24,7 @@ const bubbles = [
   },
   {
     name: "Generosity Audit",
-    text: "Generosity Audit",
+    text: "filler text",
     link: "https://generis.com/generosity-audit/",
   },
   {
